@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>عبدالكريم عمر باوزير | السيرة الذاتية</title>
+<meta name="description" content="السيرة الذاتية الاحترافية لعبدالكريم عمر باوزير — طالب بكالوريوس محاسبة">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+  body {
+    font-family: 'Cairo', sans-serif;
+    background: #eef2f7;
+    color: #2c3e50;
+    line-height: 1.8;
+  }
+
+  a { text-decoration: none; color: inherit; }
+  ul { list-style: none; }
+
+  .container { max-width: 940px; margin: 0 auto; padding: 0 20px; }
+
+  /* ============ التنقل ============ */
+  .nav {
+    position: fixed; top: 0; right: 0; left: 0;
+    background: rgba(255,255,255,.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #e3e8ef;
+    z-index: 100;
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .nav-logo { font-size: 21px; font-weight: 800; color: #16324f; }
+  .nav-logo span { color: #c9a227; }
+  .nav-links { display: flex; gap: 18px; flex-wrap: wrap; }
+  .nav-links a { font-size: 14px; font-weight: 600; color: #55677c; transition: color .3s; }
+  .nav-links a:hover { color: #b8912a; }
+
+  /* ============ Hero ============ */
+  .hero {
+    background: linear-gradient(135deg, #0d2540 0%, #1a3a63 55%, #26508c 100%);
+    color: #fff;
+    text-align: center;
+    padding: 135px 20px 85px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: -120px; right: -120px;
+    width: 340px; height: 340px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,162,39,.20), transparent 70%);
+  }
+  .hero::after {
+    content: ''; position: absolute; bottom: -140px; left: -100px;
+    width: 320px; height: 320px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,.08), transparent 70%);
+  }
+  .hero > * { position: relative; z-index: 1; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(201,162,39,.14);
+    border: 1px solid rgba(201,162,39,.55);
+    color: #ecc56f;
+    padding: 6px 20px; border-radius: 30px;
+    font-size: 13.5px; font-weight: 700;
+  }
+  .hero h1 { font-size: 44px; font-weight: 800; margin: 16px 0 6px; }
+  .hero .role { font-size: 18px; color: #ecc56f; font-weight: 700; }
+  .hero .loc { margin-top: 12px; color: #c3d2e2; font-size: 14.5px; }
+  .hero .gold-line {
+    width: 90px; height: 3px; margin: 18px auto 0;
+    background: linear-gradient(90deg, transparent, #c9a227, transparent);
+    border-radius: 2px;
+  }
+  .hero-contacts { margin-top: 30px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .hero-contacts a {
+    border: 1px solid rgba(255,255,255,.35);
+    background: rgba(255,255,255,.08);
+    color: #fff; padding: 9px 22px; border-radius: 30px;
+    font-size: 14px; font-weight: 600; transition: all .3s;
+  }
+  .hero-contacts a:hover { background: rgba(201,162,39,.28); border-color: #c9a227; transform: translateY(-2px); }
+
+  /* ============ الأقسام ============ */
+  section { padding: 54px 0; }
+  .sec-title { font-size: 26px; font-weight: 800; color: #16324f; display: flex; align-items: center; gap: 14px; margin-bottom: 24px; }
+  .sec-title::before { content: ''; width: 6px; height: 30px; background: linear-gradient(180deg, #c9a227, #a67c1e); border-radius: 3px; }
+  .sec-desc { color: #7f8c8d; font-size: 14px; margin: -14px 0 24px; }
+
+  /* ============ نبذة عني ============ */
+  .about-card {
+    background: #fff; border-radius: 14px;
+    border-inline-start: 5px solid #1f3a5f;
+    padding: 26px 28px; box-shadow: 0 6px 20px rgba(22,50,79,.07);
+    font-size: 15.5px; line-height: 2.2; text-align: justify; color: #3d4f63;
+  }
+
+  /* ============ البطاقات ============ */
+  .card {
+    background: #fff; border-radius: 14px; padding: 18px 22px;
+    box-shadow: 0 5px 16px rgba(22,50,79,.06);
+    border-inline-start: 4px solid #c9a227;
+    margin-bottom: 14px; display: flex; gap: 16px; align-items: flex-start;
+    transition: transform .3s, box-shadow .3s;
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 10px 26px rgba(22,50,79,.12); }
+  .card-icon { font-size: 26px; }
+  .card h3 { font-size: 17px; font-weight: 800; color: #1a3a63; margin-bottom: 4px; }
+  .card p { font-size: 14.5px; color: #55677c; }
+
+  /* ============ المهارات ============ */
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; }
+  .skill {
+    background: #fff; border-radius: 12px; padding: 14px 18px;
+    display: flex; align-items: center; gap: 12px;
+    box-shadow: 0 4px 12px rgba(22,50,79,.06);
+    border-inline-start: 3px solid #c9a227;
+    font-size: 14.5px; font-weight: 600; color: #33475c;
+  }
+  .skill .dot { width: 9px; height: 9px; border-radius: 50%; background: #c9a227; flex-shrink: 0; }
+
+  /* ============ التواصل ============ */
+  .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+  .contact-card {
+    background: linear-gradient(150deg, #1f3a5f, #142c4b);
+    color: #fff; border-radius: 14px; padding: 26px 18px; text-align: center;
+    box-shadow: 0 8px 22px rgba(20,44,75,.25);
+  }
+  .contact-card .ic { font-size: 30px; }
+  .contact-card h3 { font-size: 16px; font-weight: 800; margin: 10px 0 6px; color: #ecc56f; }
+  .contact-card p { font-size: 14px; color: #cdd9e6; }
+
+  /* ============ الفوتر ============ */
+  footer { text-align: center; padding: 34px 20px; color: #8a97a8; font-size: 14px; border-top: 1px solid #e3e8ef; background: #fff; }
+
+  /* ============ Responsive ============ */
+  @media (max-width: 640px) {
+    .hero { padding: 110px 16px 60px; }
+    .hero h1 { font-size: 32px; }
+    .hero .role { font-size: 16px; }
+    .nav-links { gap: 10px; }
+    .sec-title { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- التنقل -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="#home" class="nav-logo">عبد<span>الكريم</span></a>
+    <div class="nav-links">
+      <a href="#about">نبذة</a>
+      <a href="#education">الشهادات</a>
+      <a href="#experience">الخبرات</a>
+      <a href="#skills">المهارات</a>
+      <a href="#contact">التواصل</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero" id="home">
+  <span class="hero-badge">باحث عن فرصة عمل — محاسبة</span>
+  <h1>عبدالكريم عمر باوزير</h1>
+  <div class="role">طالب بكالوريوس محاسبة — باحث عن فرصة عمل</div>
+  <div class="loc">📍 مقيم في الرياض</div>
+  <div class="gold-line"></div>
+  <div class="hero-contacts">
+    <a href="tel:0553684255">📞 0553684255</a>
+    <a href="mailto:abdulkareembaw@gmail.com">✉️ abdulkareembaw@gmail.com</a>
+    <a href="#contact">📍 الرياض</a>
+  </div>
+</header>
+
+<main>
+  <!-- نبذة عني -->
+  <section id="about">
+    <div class="container">
+      <h2 class="sec-title">نبذة عني</h2>
+      <p class="about-card">
+        طالب ملتزم ودقيق، حاصل على الثانوية العامة وأدرس حالياً أول سنة بكالوريوس محاسبة.
+        اكتسبت خبرة عملية من العمل في محل بلاستيك حيث تعاملت مع العملاء وتابعت المخزون والمبيعات،
+        كما عملت في دار لتحفيظ القرآن الكريم مما عزز لديّ الانضباط والالتزام.
+        أتميز بالدقة في التعامل مع الأرقام وأسعى لاكتساب خبرة حقيقية في مجال المحاسبة.
+      </p>
+    </div>
+  </section>
+
+  <!-- الشهادات الدراسية -->
+  <section id="education">
+    <div class="container">
+      <h2 class="sec-title">الشهادات الدراسية</h2>
+      <div class="card">
+        <span class="card-icon">🎓</span>
+        <div>
+          <h3>الثانوية العامة</h3>
+          <p>حاصل على الثانوية العامة</p>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-icon">📚</span>
+        <div>
+          <h3>أول سنة بكالوريوس محاسبة</h3>
+          <p>قيد الدراسة — بكالوريوس المحاسبة</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- الخبرات العملية -->
+  <section id="experience">
+    <div class="container">
+      <h2 class="sec-title">الخبرات العملية</h2>
+      <div class="card">
+        <span class="card-icon">🏪</span>
+        <div>
+          <h3>محل بلاستيك</h3>
+          <p>خدمة العملاء ومتابعة المخزون والمبيعات</p>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-icon">🕌</span>
+        <div>
+          <h3>دار لتحفيظ القرآن الكريم</h3>
+          <p>تنظيم الحلقات والتعامل مع الطلاب</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- المهارات -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="sec-title">المهارات</h2>
+      <div class="skills-grid">
+        <div class="skill"><span class="dot"></span> الدقة في التعامل مع الأرقام والحسابات</div>
+        <div class="skill"><span class="dot"></span> إجادة الحاسب الآلي وبرنامج Excel (أساسي)</div>
+        <div class="skill"><span class="dot"></span> خدمة العملاء والتعامل باحترام</div>
+        <div class="skill"><span class="dot"></span> مهارات التواصل الفعّال</div>
+        <div class="skill"><span class="dot"></span> إدارة الوقت والالتزام بالمواعيد</div>
+        <div class="skill"><span class="dot"></span> العمل الجماعي والتعلّم السريع</div>
+        <div class="skill"><span class="dot"></span> الانضباط والدقة في تنفيذ المهام</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- التواصل -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="sec-title">بيانات التواصل</h2>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="ic">📞</div>
+          <h3>الهاتف</h3>
+          <p><a href="tel:0553684255">0553684255</a></p>
+        </div>
+        <div class="contact-card">
+          <div class="ic">✉️</div>
+          <h3>البريد الإلكتروني</h3>
+          <p><a href="mailto:abdulkareembaw@gmail.com">abdulkareembaw@gmail.com</a></p>
+        </div>
+        <div class="contact-card">
+          <div class="ic">📍</div>
+          <h3>الموقع</h3>
+          <p>الرياض</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2026 — عبدالكريم عمر باوزير | طالب بكالوريوس محاسبة</p>
+</footer>
+
+</body>
+</html>
